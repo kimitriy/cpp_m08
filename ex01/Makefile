@@ -10,23 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	intern
+NAME		=	span
 
-HEADER		=	Bureaucrat.hpp \
-				Form.hpp \
-				ShrubberyCreationForm.hpp \
-				RobotomyRequestForm.hpp \
-				PresidentialPardonForm.hpp \
-				Intern.hpp \
+HEADER		=	Span.hpp \
+				MyException.hpp \
 
 SRC 		= 	main.cpp \
-				Bureaucrat.cpp \
-				Form.cpp \
-				ShrubberyCreationForm.cpp \
-				ascii_tree.cpp \
-				RobotomyRequestForm.cpp \
-				PresidentialPardonForm.cpp \
-				Intern.cpp \
+				Span.cpp \
+				MyException.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 
