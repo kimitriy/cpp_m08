@@ -1,8 +1,15 @@
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 # include <iostream>
 # include <string>
+# include <algorithm>
+# include <vector>
+# include <deque>
+# include <list>
+# include <map>
+# include <stack>
+# include <queue>
 # include "MyException.hpp"
 
 # define RESET "\033[0m"
@@ -17,15 +24,13 @@
 # define F_R_WHT "\033[0;37m"
 
 template <typename T>
-void	easyfind(std::vector<T> cont, int n)
+typename T::const_iterator	easyFind(T & cont, int n)
 {
-	std::vector<T>::const_iterator itr;
-	itr = cont.begin();
-	while (itr != cont.end())
-	{
-		if (*it )
-		++itr;
-	}
+	typename T::const_iterator itr = std::find(cont.begin(), cont.end(), n);
+	if (cont.end() == itr)
+		throw (MyException("There is no such element in the container"));
+	else
+		return (itr);
 }
 
 #endif

@@ -10,23 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	intern
+NAME		=	easyfind
 
-HEADER		=	Bureaucrat.hpp \
-				Form.hpp \
-				ShrubberyCreationForm.hpp \
-				RobotomyRequestForm.hpp \
-				PresidentialPardonForm.hpp \
-				Intern.hpp \
+HEADER		=	Easyfind.hpp \
+				MyException.hpp \
 
 SRC 		= 	main.cpp \
-				Bureaucrat.cpp \
-				Form.cpp \
-				ShrubberyCreationForm.cpp \
-				ascii_tree.cpp \
-				RobotomyRequestForm.cpp \
-				PresidentialPardonForm.cpp \
-				Intern.cpp \
+				MyException.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 
