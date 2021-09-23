@@ -26,13 +26,19 @@
 class Span
 {
 	private:
-		std::vector<int>	container;
+		unsigned int 		m_n;
+		std::vector<int>	m_container;
 	public:
 		Span(unsigned int n);
+		Span(const Span & other);
 		~Span();
+		Span & operator= (const Span & other);
+
+//		unsigned int	getN(void) const;
+		int operator[] (unsigned int indx) const;
 
 		void 			addNumber(int num);
-		void			addRange(int num1, int num2);
+		void			addRange(typename T::iterator bgn, typename T::iterator end);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 };
