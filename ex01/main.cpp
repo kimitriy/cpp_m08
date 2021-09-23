@@ -4,22 +4,22 @@ int		main()
 {
 	try
 	{
-		int		n2find = 0;
+		Span sp = Span(20);
 
-		//VECTOR////////////////////
+		sp.addNumber(5);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
+		// sp.addNumber(15);
+
 		std::vector<int> int_vctr;
-		for (int n = 0; n < 10; ++n)
-			int_vctr.push_back(n);
-		std::vector<int>::const_iterator itr_v = easyFind(int_vctr, n2find);
-		std::cout << F_R_GRN << "Number " << F_R_PRPL << *itr_v << F_R_GRN << " is in the vector." << RESET << std::endl;
+		std::vector<int>::iterator frst = int_vctr.begin();
+		std::vector<int>::iterator last = int_vctr.begin() + 10;
+		sp.addRange(frst, last);
 
-		//LIST////////////////////
-		std::list<int> int_lst;
-		for (int n = 0; n < 10; ++n)
-			int_lst.push_back(n);
-		std::list<int>::const_iterator itr_l = easyFind(int_lst, n2find);
-		std::cout << F_R_GRN << "Number " << F_R_PRPL << *itr_l << F_R_GRN << " is in the list." << RESET << std::endl;
-	
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

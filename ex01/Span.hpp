@@ -33,24 +33,16 @@ class Span
 		Span(const Span & other);
 		~Span();
 		Span & operator= (const Span & other);
-
-//		unsigned int	getN(void) const;
 		int operator[] (unsigned int indx) const;
 
+		size_t			getSize(void) const;
+
 		void 			addNumber(int num);
-		void			addRange(typename T::iterator bgn, typename T::iterator end);
+		void			addRange(std::vector<int>::iterator bgn, std::vector<int>::iterator end);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 };
 
-template <typename T>
-typename T::const_iterator	easyFind(T & cont, int n)
-{
-	typename T::const_iterator itr = std::find(cont.begin(), cont.end(), n);
-	if (cont.end() == itr)
-		throw (MyException("There is no such element in the container"));
-	else
-		return (itr);
-}
+std::ostream & operator<<( std::ostream & out, Span const & sp);
 
 #endif
