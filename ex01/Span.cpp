@@ -56,6 +56,8 @@ void	Span::addRange(std::vector<int>::iterator bgn, std::vector<int>::iterator e
 		throw (MyException("There is no free space in the container!"));
 }
 
+
+//https://www.cplusplus.com/reference/algorithm/find_if/
 unsigned int	Span::shortestSpan()
 {
 	if (m_container.size() < 2)
