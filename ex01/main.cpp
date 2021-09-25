@@ -4,8 +4,7 @@ int		main()
 {
 	try
 	{
-		Span sp = Span(20);
-
+		Span sp = Span(10001);
 		sp.addNumber(5);
 		sp.addNumber(3);
 		sp.addNumber(17);
@@ -13,11 +12,15 @@ int		main()
 		sp.addNumber(11);
 		// sp.addNumber(15);
 
+		// Span sp = Span(10001);
 		std::vector<int> int_vctr;
-		std::vector<int>::iterator frst = int_vctr.begin();
-		std::vector<int>::iterator last = int_vctr.begin() + 10;
-		sp.addRange(frst, last);
-
+		for(int i = 0; i < 9995; i++)
+		{
+			int_vctr.push_back(i * 7);
+		}
+		sp.addRange(int_vctr.begin(), int_vctr.end());
+		
+		std::cout << sp << std::endl;
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}

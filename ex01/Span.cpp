@@ -30,7 +30,7 @@ Span & Span::operator= (const Span & other)
 
 int Span::operator[] (unsigned int indx) const
 {
-	if (indx < 0 || indx >= this->m_n)
+	if (indx < 0 || indx >= m_container.size())
 		throw (MyException("Inappropriate index!"));
 	return (m_container[indx]);
 }
