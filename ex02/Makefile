@@ -10,23 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	intern
+NAME		=	mutantstack
 
-HEADER		=	Bureaucrat.hpp \
-				Form.hpp \
-				ShrubberyCreationForm.hpp \
-				RobotomyRequestForm.hpp \
-				PresidentialPardonForm.hpp \
-				Intern.hpp \
+HEADER		=	MutantStack.hpp \
 
 SRC 		= 	main.cpp \
-				Bureaucrat.cpp \
-				Form.cpp \
-				ShrubberyCreationForm.cpp \
-				ascii_tree.cpp \
-				RobotomyRequestForm.cpp \
-				PresidentialPardonForm.cpp \
-				Intern.cpp \
+				MutantStack.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 
