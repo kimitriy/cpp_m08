@@ -30,7 +30,7 @@ Span & Span::operator= (const Span & other)
 
 int Span::operator[] (unsigned int indx) const
 {
-	if (indx < 0 || indx >= m_container.size())
+	if (indx < 0 || indx >= this->m_n)
 		throw (MyException("Inappropriate index!"));
 	return (m_container[indx]);
 }
@@ -56,8 +56,6 @@ void	Span::addRange(std::vector<int>::iterator bgn, std::vector<int>::iterator e
 		throw (MyException("There is no free space in the container!"));
 }
 
-
-//https://www.cplusplus.com/reference/algorithm/find_if/
 unsigned int	Span::shortestSpan()
 {
 	if (m_container.size() < 2)
@@ -79,8 +77,7 @@ unsigned int	Span::longestSpan()
 {
 	if (m_container.size() < 2)
 		throw (MyException("There are less than 2 values in the container. Calculating is unable!"));
-	std::sort(m_container.begin(), m_container.end());
-	unsigned int spn = m_container.back() - m_container.front();
+	unsigned int spn = std::max_element(m_container.begin(), m_container.end()) - std::min_element(m_container.begin(), m_container.end());
 	return (spn);
 }
 
