@@ -52,44 +52,43 @@ std::ostream & operator<<( std::ostream & out, MutantStack const & sp);
 template <typename T>
 class MutantStack: public std::stack <T>
 {
-	//https://en.cppreference.com/w/cpp/named_req/Container
-private:
+	private:
 
-public:
-	typedef typename std::stack<T>::container_type::iterator iterator;
-	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
-	
-	MutantStack(){};												//Canonical
-	MutantStack(MutantStack const &src): std::stack<T>(src){};		//Canonical
-	virtual ~MutantStack(void){};									//Canonical
-	MutantStack &operator=(MutantStack const &src)					//Canonical
-	{
-		if (this != &src)
+	public:
+		typedef typename std::stack<T>::container_type::iterator itr;
+		typedef typename std::stack<T>::container_type::const_iterator const_itr;
+		
+		MutantStack(){ std::cout << "constr" << std::endl; };
+		MutantStack(MutantStack const &src): std::stack<T>(src){ std::cout << "copy constr" << std::endl; };
+		virtual ~MutantStack(void){ std::cout << "destr" << std::endl; };
+		MutantStack &operator=(MutantStack const &src)
 		{
-			std::stack<T>::operator=(src);
-		}
-	};
-	
-	iterator begin()
-	{
-		return(std::stack<T>::c.begin());
-	};
-	
-	iterator end()
-	{
-		return(std::stack<T>::c.end());
-	};
-	
-	const_iterator begin() const
-	{
-		return(std::stack<T>::c.begin());
-	};
-	
-	const_iterator end() const
-	{
-		return(std::stack<T>::c.end());
-	};
-
+			std::cout << "= operator" << std::endl;
+			if (this != &src)
+			{
+				std::stack<T>::operator=(src);
+			}
+		};
+		
+		itr begin()
+		{
+			return(std::stack<T>::c.begin());
+		};
+		
+		itr end()
+		{
+			return(std::stack<T>::c.end());
+		};
+		
+		const_itr begin() const
+		{
+			return(std::stack<T>::c.begin());
+		};
+		
+		const_itr end() const
+		{
+			return(std::stack<T>::c.end());
+		};
 };
 
 #endif
